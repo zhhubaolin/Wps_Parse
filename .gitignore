@@ -1,10 +1,13 @@
-*
-# 不忽略被忽略的文件夹下的文件
-!*/
-!.gitignore
-!dist/
-!wps_parse/
-!README.md
-!requirements.txt
-
-
+.idea
+.venv
+.vscode
+__pycache__/
+build_exe.py
+BUILD_GUIDE.md
+create_icon.py
+installer.nsi
+wps_converter.spec
+requirements2.txt
+LICENSE.txt
+media
+build

@@ -1,11 +1,13 @@
 # WPS Parse
 
-一个用于将 WPS 文件转换为 DOCX 和 Markdown 格式的 Python 工具库。
+一个用于将 WPS（DOC） 文件转换为 DOCX 和 Markdown 格式的 Python 工具库。
+
+.wps 和 .doc 都是“黑盒”二进制，所以这两种格式都支持。
 
 ## 功能特性
 
-- 🔄 **WPS 转 DOCX**：将 .wps 文件转换为 Microsoft Word .docx 格式
-- 📝 **WPS 转 Markdown**：将 .wps 文件转换为 Markdown .md 格式
+- 🔄 **WPS（DOC） 转 DOCX**：将 .wps 文件转换为 Microsoft Word .docx 格式
+- 📝 **WPS（DOC） 转 Markdown**：将 .wps 文件转换为 Markdown .md 格式
 - 🧹 **智能文本清理**：自动过滤乱码和不可读字符
 - 📊 **可读性检测**：基于字符类型比例判断文本可读性
 - 🛡️ **错误处理**：完善的异常处理机制
@@ -24,31 +26,25 @@ pip install -r requirements.txt
 
 ## 使用方法
 
-### 🖥️ GUI界面使用（推荐）
+### 🖥️ GUI界面使用（推荐），📦 独立exe程序
 
-运行图形界面版本：
+将现有功能已经打包成exe文件，在./dist目录下，直接点击使用即可。
 
 ```bash
+# 有python环境的盆友，可以选择直接运行
 python gui_app.py
+
+# 没有python环境的盆友，直接运行打包好的exe程序
+./dist/WPS转换工具.exe
 ```
 
 界面功能：
+
 - 📁 可视化文件选择
 - 🔄 支持批量转换
 - 📊 实时进度显示
 - ⚙️ 可调节可读性阈值
 - 📝 详细转换日志
-
-### 📦 独立exe程序
-
-如果你需要在没有Python环境的电脑上使用，可以构建独立的exe文件：
-
-```bash
-# 构建exe文件
-python build_exe.py
-```
-
-详细构建说明请参考 [BUILD_GUIDE.md](BUILD_GUIDE.md)
 
 ### 💻 命令行使用
 
@@ -94,13 +90,10 @@ wps_to_md(src, dst, readability_threshold=0.8)
 Wps_Parse/
 ├── wps_parse/              # 主要模块
 │   ├── __init__.py
-│   ├── wps_to_docx.py      # WPS 转 DOCX 功能
-│   └── wps_to_markdown.py  # WPS 转 Markdown 功能
-├── media/                  # 示例文件
-│   ├── wps/               # 原始 WPS 文件
-│   ├── docx/              # 转换后的 DOCX 文件
-│   ├── markdown/          # 转换后的 Markdown 文件
-│   └── doc/               # 其他文档文件
+│   ├── wps_to_docx.py      # WPS（DOC） 转 DOCX 功能
+│   └── wps_to_markdown.py  # WPS（DOC） 转 Markdown 功能
+├── gui_app.py              # 可视化GUI界面，可直接运行
+│ 
 ├── requirements.txt        # 依赖列表
 └── README.md              # 项目说明
 ```
@@ -109,7 +102,7 @@ Wps_Parse/
 
 ### 文本提取与清理
 
-1. **OLE 文件解析**：使用 `olefile` 库解析 WPS 文件的 OLE 容器结构
+1. **OLE 文件解析**：使用 `olefile` 库解析 WPS（DOC） 文件的 OLE 容器结构
 2. **WordDocument 流提取**：从 OLE 容器中提取 WordDocument 数据流
 3. **编码处理**：使用 UTF-16LE 编码解码文本数据
 4. **字符清理**：移除控制字符、NULL 字符、代理对和私用区字符
@@ -117,7 +110,8 @@ Wps_Parse/
 
 ### 可读性检测
 
-通过分析文本中可打印字符的比例来判断文本是否为人类可读：
+通过分析文本中可打印字符的比例来判断文本是否为可读：
+
 - 字母、数字、汉字、标点符号、空格等被视为可读字符
 - 默认阈值为 100%，可根据需要调整
 - 自动过滤掉乱码段落
@@ -129,30 +123,7 @@ Wps_Parse/
 
 ## 注意事项
 
-1. **文件格式支持**：目前仅支持标准的 WPS 文件格式（OLE 容器）
-2. **编码假设**：假设 WPS 文件使用 UTF-16LE 编码
+1. **文件格式支持**：目前仅支持标准的 WPS & DOC 文件格式（OLE 容器）
+2. **编码假设**：假设 WPS & DOC 文件使用 UTF-16LE 编码
 3. **格式限制**：转换过程中会丢失原文档的格式信息（字体、颜色、样式等）
 4. **文本内容**：主要提取纯文本内容，不包括图片、表格等复杂元素
-
-## 示例
-
-项目包含完整的示例文件，可以直接运行：
-
-```bash
-# 进入项目目录
-cd wps_parse
-
-# 运行 WPS 转 DOCX 示例
-python wps_to_docx.py
-
-# 运行 WPS 转 Markdown 示例
-python wps_to_markdown.py
-```
-
-## 贡献
-
-欢迎提交 Issue 和 Pull Request 来改进这个项目！
-
-## 许可证
-
-本项目采用 MIT 许可证。
