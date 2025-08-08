@@ -5,9 +5,6 @@ __pycache__/
 build_exe.py
 BUILD_GUIDE.md
 create_icon.py
-gui_app.py
-icon.ico
-icon.svg
 installer.nsi
 wps_converter.spec
 requirements2.txt

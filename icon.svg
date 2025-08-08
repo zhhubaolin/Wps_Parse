@@ -1,0 +1,27 @@
+
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <!-- 背景圆形 -->
+  <circle cx="32" cy="32" r="30" fill="#4A90E2" stroke="#2E5C8A" stroke-width="2"/>
+  
+  <!-- 文档图标 -->
+  <rect x="18" y="12" width="20" height="26" rx="2" fill="white" stroke="#2E5C8A" stroke-width="1"/>
+  
+  <!-- 文档折角 -->
+  <path d="M 34 12 L 34 18 L 40 18 Z" fill="#E8E8E8" stroke="#2E5C8A" stroke-width="1"/>
+  
+  <!-- 文档内容线条 -->
+  <line x1="22" y1="22" x2="34" y2="22" stroke="#4A90E2" stroke-width="1"/>
+  <line x1="22" y1="26" x2="34" y2="26" stroke="#4A90E2" stroke-width="1"/>
+  <line x1="22" y1="30" x2="30" y2="30" stroke="#4A90E2" stroke-width="1"/>
+  
+  <!-- 转换箭头 -->
+  <path d="M 20 42 L 28 42 M 24 38 L 28 42 L 24 46" stroke="#FFD700" stroke-width="2" fill="none"/>
+  
+  <!-- 目标格式标识 -->
+  <rect x="30" y="40" width="12" height="8" rx="1" fill="#FFD700" stroke="#E6C200" stroke-width="1"/>
+  <text x="36" y="46" text-anchor="middle" font-family="Arial" font-size="6" fill="#2E5C8A">DOC</text>
+  
+  <!-- WPS标识 -->
+  <text x="32" y="56" text-anchor="middle" font-family="Arial" font-size="8" font-weight="bold" fill="white">WPS</text>
+</svg>
