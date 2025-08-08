@@ -92,6 +92,8 @@ Wps_Parse/
 │   ├── __init__.py
 │   ├── wps_to_docx.py      # WPS（DOC） 转 DOCX 功能
 │   └── wps_to_markdown.py  # WPS（DOC） 转 Markdown 功能
+├── dist/ 
+│   └── WPS转换工具.exe      # 打包好的exe程序
 ├── gui_app.py              # 可视化GUI界面，可直接运行
 │ 
 ├── requirements.txt        # 依赖列表
