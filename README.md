@@ -31,6 +31,10 @@ pip install -r requirements.txt
 将现有功能已经打包成exe文件，在./dist目录下，直接点击使用即可。
 
 ```bash
+# 有python环境的盆友，可以选择直接运行
+python gui_app.py
+
+# 没有python环境的盆友，直接运行打包好的exe程序
 ./dist/WPS转换工具.exe
 ```
 
@@ -88,11 +92,8 @@ Wps_Parse/
 │   ├── __init__.py
 │   ├── wps_to_docx.py      # WPS（DOC） 转 DOCX 功能
 │   └── wps_to_markdown.py  # WPS（DOC） 转 Markdown 功能
-├── media/                  # 示例文件（用户可自行创建）
-│   ├── wps/               # 原始 WPS 文件
-│   ├── docx/              # 转换后的 DOCX 文件
-│   ├── markdown/          # 转换后的 Markdown 文件
-│   └── doc/               # 原始 DOC 文件
+├── gui_app.py              # 可视化GUI界面，可直接运行
+│ 
 ├── requirements.txt        # 依赖列表
 └── README.md              # 项目说明
 ```
@@ -126,18 +127,3 @@ Wps_Parse/
 2. **编码假设**：假设 WPS & DOC 文件使用 UTF-16LE 编码
 3. **格式限制**：转换过程中会丢失原文档的格式信息（字体、颜色、样式等）
 4. **文本内容**：主要提取纯文本内容，不包括图片、表格等复杂元素
-
-## 示例
-
-项目包含完整的示例文件，可以直接运行：
-
-```bash
-# 进入项目目录
-cd wps_parse
-
-# 运行 WPS 转 DOCX 示例
-python wps_to_docx.py
-
-# 运行 WPS 转 Markdown 示例
-python wps_to_markdown.py
-```
