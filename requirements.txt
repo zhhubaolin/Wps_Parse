@@ -1,0 +1,3 @@
+olefile==0.47
+docx==0.2.4
+python-docx==1.2.0

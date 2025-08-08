@@ -1,0 +1,10 @@
+*
+# 不忽略被忽略的文件夹下的文件
+!*/
+!.gitignore
+!dist/
+!wps_parse/
+!README.md
+!requirements.txt
+
+
