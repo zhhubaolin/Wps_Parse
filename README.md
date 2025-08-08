@@ -2,6 +2,8 @@
 
 一个用于将 WPS（DOC） 文件转换为 DOCX 和 Markdown 格式的 Python 工具库。
 
+.wps 和 .doc 都是“黑盒”二进制，所以这两种格式都支持。
+
 ## 功能特性
 
 - 🔄 **WPS（DOC） 转 DOCX**：将 .wps 文件转换为 Microsoft Word .docx 格式
