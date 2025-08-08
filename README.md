@@ -1,4 +1,4 @@
-# WPS Parse  （.wps&.doc文件转DOCX和Markdown)
+# WPS Parse  （.wps&.doc文件转DOCX和Markdown）
 
 一个用于将 WPS（DOC） 文件转换为 DOCX 和 Markdown 格式的 Python 工具库。
 
